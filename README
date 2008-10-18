@@ -1,13 +1,11 @@
 WhatDoesThisErrorMean
 =====================
 
-Introduction goes here.
+This plugin overrides the error message page that appears in rails' development mode when an exception is raised to provide a link to search whatdoesthiserrormean.com for that error.
+
+= Installation
+
+$ script/plugin install git://github.com/giraffesoft/what_does_this_error_mean-rails.git
 
 
-Example
-=======
-
-Example goes here.
-
-
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+Copyright (c) 2008 GiraffeSoft Inc., released under the MIT license
