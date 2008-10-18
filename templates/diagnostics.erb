@@ -1,0 +1,15 @@
+<% form_tag 'http://whatdoesthiserrormean.com/error/search', :name => 'wdtem' do -%>
+  <%= hidden_field_tag 'q', @exception.class.to_s + ' ' + @exception.clean_message %>
+  <h1>
+    <%=h @exception.class.to_s %>
+    <% if request.parameters['controller'] %>
+      in <%=h request.parameters['controller'].humanize %>Controller<% if request.parameters['action'] %>#<%=h request.parameters['action'] %><% end %>
+    <% end %>
+  </h1>
+  <pre><%=h @exception.clean_message %></pre>
+  <a href="javascript: document.forms['wdtem'].submit();"><%= image_tag('http://whatdoesthiserrormean.com/images/logo_for_error_page.gif', :border => '0', :alt => "If you can't see this image, whatdoesthiserrormean.com is probably down.") %></a>
+<% end -%>
+
+<%= render_file(@rescues_path + "/_trace.erb", false) %>
+
+<%= render_file(@rescues_path + "/_request_and_response.erb", false) %>
