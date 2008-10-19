@@ -1,4 +1,4 @@
-<% form_tag 'http://whatdoesthiserrormean.com/error/search', :name => 'wdtem' do -%>
+<% form_tag 'http://whatdoesthiserrormean.com/search', :name => 'wdtem' do -%>
   <%= hidden_field_tag 'q', @exception.class.to_s + ' ' + @exception.clean_message %>
   <h1>
     <%=h @exception.class.to_s %>
